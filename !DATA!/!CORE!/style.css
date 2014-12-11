@@ -1,0 +1,185 @@
+@-webkit-keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+}
+body {
+    position: relative;
+    width: 51pc;
+    height: 33pc;
+    margin: 3pc auto;
+}
+#background_container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+}
+#background_container > div {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: center / cover no-repeat black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s, visibility 2s;
+}
+#background_container > div:last-child {
+    opacity: 1;
+    visibility: visible;
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+#textbox {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7.5pc;
+    background: black;
+    opacity: .8;
+    visibility: visible;
+    z-index: 2;
+    transition: height 1s, opacity 1s, visibility 1s;
+}
+#textbox:empty {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+#textbox > div {
+    position: absolute;
+    top: 1.5pc;
+    bottom: 1.5pc;
+    left: 1.5pc;
+    right: 1.5pc;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+    text-align: center;
+    white-space: pre;
+    overflow: visible;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+}
+#textbox > div[data-name] {
+    left: 7.5pc;
+    font-style: normal;
+    text-align: left;
+}
+#textbox > div[data-name]::before {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    font-weight: bold;
+    content: attr(data-name) " : ";
+}
+#textbox > div:last-child {
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    transition: none;
+}
+#interactbox {
+    position: absolute;
+    bottom: 7.5pc;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: .75pc 0;
+    height: 1.5pc;
+    background: black;
+    text-align: center;
+    opacity: .6;
+    visibility: visible;
+    z-index: 2;
+    transition: bottom 1s, height 1s, opacity 1s, visibility 1s;
+}
+#interactbox:not(:empty):hover {
+    opacity: 1;
+}
+#textbox:empty ~ #interactbox {
+    bottom: 0;
+}
+#interactbox:empty {
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+#interactbox > span {
+    cursor: pointer;
+    margin: 0 1.5pc;
+    opacity: .5;
+    transition: opacity .5s;
+}
+#interactbox > span:hover {
+    opacity : 1;
+}
+*.portrait {
+    position: absolute;
+    top: 1.5pc;
+    left: 1pc;
+    margin: 0;
+    border-right: thin white solid;
+    padding: 0 1pc 0 0;
+    width: 4.5pc;
+    height: 4.5pc;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s, visibility 1s;
+}
+*.portrait:not([src=""]):first-child {
+    -webkit-animation-name: fade-in;
+    animation-name: fade-in;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    transition: none;
+}
+*.portrait:not(:first-child) {
+    opacity: 0;
+    visibility: hidden;
+}
+*.portrait[src=""] {
+    opacity: 1;
+    visibility: hidden;
+}

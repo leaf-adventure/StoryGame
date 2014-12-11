@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE scene>
+<scene background="blueground.png">
+<location id="beginning"/>
+<dialogue forceDuration="1000">
+StoryGame game engine
+</dialogue>
+<interact>
+<option do="nothing">Play Sample</option>
+<option do="loadScene" withParameter="credits.xml">Credits</option>
+</interact>
+<dialogue>
+StoryGame game sample
+</dialogue>
+<portrait name="TEST Character" src="test.png"/>
+<dialogue speaker="TEST Character">Everything worked_!</dialogue>
+<do function="goTo" withParameter="beginning"/>
+</scene>

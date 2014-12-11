@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE scene>
+<scene background="blueground.png" music="Firefly.opus">
+<dialogue>
+StoryGame
+</dialogue>
+<dialogue>
+a game engine by [leaf]
+</dialogue>
+<dialogue>
+~the end~
+</dialogue>
+<do function="clearDialogue"/>
+<do function="loadScene" withParameter="sample.xml"/>
+</scene>
