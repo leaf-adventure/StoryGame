@@ -26,10 +26,15 @@ html {
     color: white;
 }
 body {
+    margin: 3pc 0;
+}
+#game_container {
+    display: block;
     position: relative;
     width: 51pc;
     height: 33pc;
-    margin: 3pc auto;
+    margin: 0;
+    padding: 0;
 }
 #background_container {
     position: absolute;

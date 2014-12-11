@@ -214,5 +214,3 @@ var Effect = {
         if (advance) Scene.advance();
     }
 }
-
-document.addEventListener("DOMContentLoaded", Scene.init, false);

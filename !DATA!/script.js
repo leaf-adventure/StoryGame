@@ -9,3 +9,5 @@ Game.init = function() {
     Game.portrait_prefix = "!DATA!/portraits/";
     Effect.loadScene("sample.xml");
 }
+
+document.addEventListener("DOMContentLoaded", Scene.init, false);
