@@ -33,7 +33,7 @@ body {
     position: relative;
     width: 51pc;
     height: 33pc;
-    margin: 0;
+    margin: auto;
     padding: 0;
 }
 #background_container {
