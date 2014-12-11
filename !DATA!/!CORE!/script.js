@@ -39,8 +39,6 @@ var Scene = {
             if (Scene.current_element == null) Scene.current_element = Scene.document.documentElement.firstElementChild;
             else Scene.current_element = Scene.current_element.nextElementSibling;
             switch (Scene.current_element.tagName) {
-                case "menu":
-                    break;
                 case "do":
                     Effect[Scene.current_element.getAttribute("function")](Scene.current_element.getAttribute("withParameter"), true);
                     break;
